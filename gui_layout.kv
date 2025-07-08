@@ -1,0 +1,116 @@
+# AI EPUB Rewriter - Premium GUI Layout
+# Defines the visual styling and structure for all screens
+
+# Global color definitions
+#:set GOLD [0.784, 0.608, 0.235, 1]
+#:set LIGHT_GOLD [0.941, 0.902, 0.824, 1]
+#:set DARK_BG [0.1, 0.1, 0.1, 0.85]
+#:set TEXT_GRAY [0.8, 0.8, 0.8, 1]
+#:set TRANSPARENT [0, 0, 0, 0]
+
+# Premium Button Styling
+<AnimatedButton>:
+    background_normal: ''
+    background_down: ''
+    background_color: TRANSPARENT
+    bold: True
+    
+# Glass Panel Base Styling
+<GlassPanel>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.1, 0.1, 0.85
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [dp(20)]
+        Color:
+            rgba: GOLD[0], GOLD[1], GOLD[2], 0.3
+        Line:
+            rounded_rectangle: (self.x, self.y, self.width, self.height, dp(20))
+            width: dp(1.5)
+
+# Premium Text Input Styling
+<TextInput>:
+    multiline: False
+    font_size: dp(16)
+    background_normal: ''
+    background_active: ''
+    background_color: 0.1, 0.1, 0.1, 0.7
+    foreground_color: LIGHT_GOLD
+    cursor_color: GOLD
+    cursor_width: dp(2)
+    padding: [dp(15), dp(10)]
+    selection_color: GOLD[0], GOLD[1], GOLD[2], 0.3
+    
+# Progress Bar Styling
+<ProgressBar>:
+    canvas:
+        Clear
+        Color:
+            rgba: 0.2, 0.2, 0.2, 0.8
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [dp(10)]
+        Color:
+            rgba: GOLD
+        RoundedRectangle:
+            pos: self.pos
+            size: self.width * (self.value / float(self.max)), self.height
+            radius: [dp(10)]
+            
+# Label Styling
+<Label>:
+    color: TEXT_GRAY
+    
+# File Chooser Styling
+<FileChooserListView>:
+    color: LIGHT_GOLD
+    
+<FileChooserListLayout>:
+    _background_color: DARK_BG
+    _progress_color: GOLD
+    
+# Scroll View Styling
+<ScrollView>:
+    bar_width: dp(10)
+    bar_color: GOLD[0], GOLD[1], GOLD[2], 0.5
+    bar_inactive_color: GOLD[0], GOLD[1], GOLD[2], 0.2
+    scroll_type: ['bars', 'content']
+    
+# Modal View Styling
+<ModalView>:
+    background: ''
+    background_color: 0, 0, 0, 0.8
+    
+# Screen Transitions
+<ScreenManager>:
+    canvas.before:
+        Color:
+            rgba: 0, 0, 0, 0
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            
+# Premium Title Styling
+<-PremiumTitle@Label>:
+    font_size: dp(36)
+    color: LIGHT_GOLD
+    bold: True
+    
+# Premium Subtitle Styling
+<-PremiumSubtitle@Label>:
+    font_size: dp(18)
+    color: TEXT_GRAY
+    
+# Section Header Styling
+<-SectionHeader@Label>:
+    font_size: dp(24)
+    color: GOLD
+    bold: True
+    size_hint_y: None
+    height: dp(40)
+    text_size: self.size
+    halign: 'left'
+    valign: 'middle'

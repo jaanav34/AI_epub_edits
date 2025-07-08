@@ -152,12 +152,24 @@ All files for a project are neatly organized within the `projects/` directory un
 
 -----
 
+## 🎨 **Premium GUI Available!**
+
+A stunning graphical interface is now available for AI_epub_edits! The premium GUI features:
+- Modern luxury design with dynamic backgrounds
+- Real-time processing visualization
+- Intuitive project management
+- One-click EPUB packaging
+
+**To launch the GUI:** `python run_gui.py`
+
+See [GUI_README.md](GUI_README.md) for details.
+
 ## 💡 **Future Ideas**
 
-  - GUI wrapper for easy project management.
   - Real-time preview of rewritten chapters in a browser.
   - Support for additional input formats (`.txt`, `.docx`).
   - A style-tuning dashboard to dynamically adjust prompts.
+  - Mobile app version
 
 -----
 
